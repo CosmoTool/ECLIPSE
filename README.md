@@ -21,6 +21,10 @@
 
 --------------------------------------------------------------------------------
 
+If you use ECLIPSE for any scientific publication, we kindly ask you to cite this github repository and the companion paper https://iopscience.iop.org/article/10.1088/1475-7516/2021/07/034
+
+________________________________________________________________________________
+
 ECLIPSE Code:
 
   ECLIPSE_TEB.f90
