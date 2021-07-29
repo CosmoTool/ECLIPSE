@@ -24,19 +24,28 @@
 ECLIPSE Code:
 
 ECLIPSE_TEB.f90
+
 ECLIPSE_EB.f90
+
 ECLIPSE_T.f90
+
 
 Compilation scripts:
 
 cipLinux.sh
+
 cCrayNERSC.sh
+
 cipAltamira.sh
+
+
 
 Job scripts:
 
 NERSCJob.sh
+
 AltamiraJob.sh
+
 
 Auxiliary code:
 
@@ -45,6 +54,7 @@ ECLIPSE_Memory.f90
 Manual:
 
 ECLIPSE User Guide.pdf
+
 
 Example folder:
 
