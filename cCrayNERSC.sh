@@ -1,0 +1,1 @@
+ftn "$1".f90 -o "$1" -O3 -L/usr/common/software/cfitsio/3.47/lib -lcfitsio -Wl,-R//usr/common/software/cfitsio/3.47/lib
