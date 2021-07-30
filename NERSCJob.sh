@@ -10,4 +10,4 @@
 #SBATCH --mail-user=<user>@<domain>.com
 #SBATCH --mail-type=ALL
 
-srun ./ECLIPSE_TEB 2 Example_Folder/Example.ini
+srun ./ECLIPSE_TEB 2 Example/Example.ini
