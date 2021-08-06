@@ -62,7 +62,9 @@ Manual:
 
 Example folder:
 
-  Example
+  Example_NSide8
+  
+  [See the file "Readme" in the folder]
 
 
 
