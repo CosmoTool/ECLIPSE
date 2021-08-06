@@ -2,7 +2,7 @@ Files in folder:
 
 	Dl_Planck.dat:				Fiducial model
 	TQUMaps.fits:				A file with 1000 TQU full sky simulated maps
-	Three_Masks_NSide8.fits: 	A file with three mask maps
+	Three_Masks_NSide8.fits: 	        A file with three mask maps
 	BinLimits.dat:				A file that contains the superior limits of the bins
 
 	_____________________________________________
@@ -10,18 +10,18 @@ Files in folder:
 
 	Example.ini:				A configuration file that points to the files above
 								
-								It assumes that the files are in the folder Example_NSide8
+						It assumes that the files are in the folder Example_NSide8
 
 								
-								CAUTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+						!!!!!!!!!!!!!!!!!!!!!!!!!!!!   CAUTION   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-								Example.ini assumes that the HEALPix data files are in: /home/daniel/Enlaces/Healpix_3.70/data/
+						Example.ini assumes that the HEALPix data files are in: /home/daniel/Enlaces/Healpix_3.70/data/
 
-								-----> Do not forget to fix the key 
+						-----> Do not forget to set the key 
 
-									Healpix_Data_Folfer
+							Healpix_Data_Folfer
 
-								according to the location on your computer
+						according to the location on your computer
 
     _________________________________________________
 
