@@ -4230,14 +4230,18 @@ SUBROUTINE pix2ang_ring(nside, ipix, z, phi)
                 
                 p =  LEN(dato)
                 cad = cin(p+1:LEN(TRIM(cin)))
-                !write(*,*) "Toma entero de: ", cad
-                READ(cad,*)  valor
-                
+              
+                if(Len(Trim(cad))>0) then
+                  READ(cad,*)  valor
+                else
+                  valor = -123456789
+                endif
+              
             END IF
-            
-            
+                  
         END SUBROUTINE CargaEntero
-        
+       
+       
         SUBROUTINE CargaReal(cin, dato, valor)
             
             IMPLICIT NONE
@@ -4255,13 +4259,17 @@ SUBROUTINE pix2ang_ring(nside, ipix, z, phi)
                 
                 p =  LEN(dato)
                 cad = cin(p+1:LEN(TRIM(cin)))
-                !write(*,*) "Toma real de: ", cad
-                READ(cad,*)  valor
-                
+              
+                if(Len(Trim(cad))>0) then
+                  READ(cad,*)  valor
+                else
+                  valor = -123456789
+                endif
+              
             END IF
-            
-            
+              
         END SUBROUTINE 
+        
         
         SUBROUTINE CargaCadena(cin, dato, valor)
             
@@ -4280,8 +4288,12 @@ SUBROUTINE pix2ang_ring(nside, ipix, z, phi)
                 
                 p =  LEN(dato)
                 cad = cin(p+1:LEN(TRIM(cin)))
-                !write(*,*) "Toma real de: ", cad
-                READ(cad,*)  valor
+
+                if(Len(Trim(cad))>0) then
+                  READ(cad,*)  valor
+                else
+                  valor = "!!!!!!!!!!!!!! Bad data !!!!!!!!!!!!!"
+                endif
                 
             END IF
             
