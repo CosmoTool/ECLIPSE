@@ -1060,78 +1060,90 @@ SUBROUTINE CargaProblema(MuestraMemoria, Problema)
   RETURN
 
 CONTAINS
-  SUBROUTINE CargaEntero(cin, dato, valor)
-
-    IMPLICIT NONE
-
-    CHARACTER(len=100), INTENT(in) :: cin
-    CHARACTER(len=*), INTENT(in) :: dato
-    INTEGER, INTENT(inout) :: valor
-
-    INTEGER :: p
-    CHARACTER(len=100) :: cad
-
-    p =INDEX(cin, dato)
-
-    IF(p/=0) THEN
-
+SUBROUTINE CargaEntero(cin, dato, valor)
+            
+   IMPLICIT NONE
+   
+   CHARACTER(len=100), INTENT(in) :: cin
+   CHARACTER(len=*), INTENT(in) :: dato
+   INTEGER, INTENT(inout) :: valor
+   
+   INTEGER :: p
+   CHARACTER(len=100) :: cad
+   
+   p =INDEX(cin, dato)
+   
+   IF(p/=0) THEN
+       
        p =  LEN(dato)
        cad = cin(p+1:LEN(TRIM(cin)))
-       !write(*,*) "Toma entero de: ", cad
-       READ(cad,*)  valor
+     
+       if(Len(Trim(cad))>0) then
+         READ(cad,*)  valor
+       else
+         valor = -123456789
+       endif
+     
+   END IF
+         
+END SUBROUTINE CargaEntero
 
-    END IF
 
-
-  END SUBROUTINE CargaEntero
-
-  SUBROUTINE CargaReal(cin, dato, valor)
-
-    IMPLICIT NONE
-
-    CHARACTER(len=100), INTENT(in) :: cin
-    CHARACTER(len=*), INTENT(in) :: dato
-    REAL(kind=8), INTENT(inout) :: valor
-
-    INTEGER :: p
-    CHARACTER(len=100) :: cad
-
-    p =INDEX(cin, dato)
-
-    IF(p/=0) THEN
-
+SUBROUTINE CargaReal(cin, dato, valor)
+   
+   IMPLICIT NONE
+   
+   CHARACTER(len=100), INTENT(in) :: cin
+   CHARACTER(len=*), INTENT(in) :: dato
+   REAL(kind=8), INTENT(inout) :: valor
+   
+   INTEGER :: p
+   CHARACTER(len=100) :: cad
+   
+   p =INDEX(cin, dato)
+   
+   IF(p/=0) THEN
+       
        p =  LEN(dato)
        cad = cin(p+1:LEN(TRIM(cin)))
-       !write(*,*) "Toma real de: ", cad
-       READ(cad,*)  valor
+     
+       if(Len(Trim(cad))>0) then
+         READ(cad,*)  valor
+       else
+         valor = -123456789
+       endif
+     
+   END IF
+     
+END SUBROUTINE 
 
-    END IF
 
-
-  END SUBROUTINE CargaReal
-
-  SUBROUTINE CargaCadena(cin, dato, valor)
-
-    IMPLICIT NONE
-
-    CHARACTER(len=100), INTENT(in) :: cin
-    CHARACTER(len=*), INTENT(in) :: dato
-    CHARACTER(len=100), INTENT(inout) :: valor
-
-    INTEGER :: p
-    CHARACTER(len=100) :: cad
-
-    p =INDEX(cin, dato)
-
-    IF(p/=0) THEN
-
+SUBROUTINE CargaCadena(cin, dato, valor)
+   
+   IMPLICIT NONE
+   
+   CHARACTER(len=100), INTENT(in) :: cin
+   CHARACTER(len=*), INTENT(in) :: dato
+   CHARACTER(len=100), INTENT(inout) :: valor
+   
+   INTEGER :: p
+   CHARACTER(len=100) :: cad
+   
+   p =INDEX(cin, dato)
+   
+   IF(p/=0) THEN
+       
        p =  LEN(dato)
        cad = cin(p+1:LEN(TRIM(cin)))
-       !write(*,*) "Toma real de: ", cad
-       READ(cad,*)  valor
 
-    END IF
-
-  END SUBROUTINE CargaCadena
+       if(Len(Trim(cad))>0) then
+         READ(cad,*)  valor
+       else
+         valor = "!!!!!!!!!!!!!! Bad data !!!!!!!!!!!!!"
+       endif
+       
+   END IF
+   
+END SUBROUTINE CargaCadena
 
 END SUBROUTINE CargaProblema

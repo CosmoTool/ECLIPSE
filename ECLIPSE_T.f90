@@ -2094,11 +2094,9 @@ SUBROUTINE CalculaEspectroPotencia(IAM, Lugar, lmax, NMapas, QuitarSesgo)
     
     !*****************************
     
-    REAL(KIND=8), ALLOCATABLE, DIMENSION(:,:) :: MF, IMF, Yl, Dl, MF2, Dl2, Yl2
+    REAL(KIND=8), ALLOCATABLE, DIMENSION(:,:) :: MF, IMF, Yl, Dl
     REAL(KIND=8), ALLOCATABLE, DIMENSION(:) :: Bl, DlMedio, DlSigma, SumaDl, SumaCuardadoDl, ErrorTeorico
-    REAL(KIND=8), ALLOCATABLE, DIMENSION(:) :: DlEscalar, DlTensorial, P1, r
-    REAL(kind=8) :: divisor, RMedio, SigmaR, ErrorR
-    INTEGER :: info, dim, i,j, AllocateStatus
+    INTEGER :: info, dim, i, AllocateStatus
 
     EXTERNAL :: dpotrf, dpotri, dsymm
     
