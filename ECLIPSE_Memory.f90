@@ -128,7 +128,7 @@ PROGRAM QMLTEB
   INTEGER :: NPixT, NPixP, MuestraMemoria, TotalArmonicos
   INTEGER, ALLOCATABLE, DIMENSION(:) :: MascaraT, MascaraP
 
-  REAL(kind=8) t,p,L, A, B
+  REAL(kind=8) t,p,L, A0, A, B
 
   !*************************************************************************
 
@@ -142,12 +142,13 @@ PROGRAM QMLTEB
 
   !Carga problema
   !write(*,110)
+  WRITE(*,*)
   WRITE(*,*) "Loading configuration from: ", TRIM(ArchivoProblema)
   WRITE(*,*)
   CALL CargaProblema( MuestraMemoria, ArchivoProblema)
 
   WRITE(*,*)
-  WRITE(*,*) "**************************************************"
+  WRITE(*,*) "*******************************************************************"
   WRITE(*,*) "Loading masks"
   WRITE(*,*)
 
@@ -174,7 +175,7 @@ PROGRAM QMLTEB
   !************************************
 
   WRITE(*,*)
-  WRITE(*,*) "**************************************************"
+  WRITE(*,*) "*******************************************************************"
 
 
   t = npixt
@@ -182,54 +183,66 @@ PROGRAM QMLTEB
   L = TotalArmonicos
 
   !TEB
+  A0 = 2*(t+2*p)**2
   A = t*t + 2*t*p + 3*p*p + t*L + 4*p*L + 2*(t+2*p)*(3*L)
   B = 2*( 6*L*L + 4*p*L +  4*p*L)
 
+  A0 = 8D0*A0/1024D0**3 
   A = 8D0*A/1024D0**3
   B = 8D0*B/1024D0**3
 
   WRITE(*,*)
-  WRITE(*,*) "**************************************************"
-  WRITE(*,*) "ECLIPSE_TEB"
+  WRITE(*,*) "*******************************************************************"
+  WRITE(*,*) "ECLIPSE_TEB - [Gb]"
+  WRITE(*,*)
 
-  WRITE(*,*) "Memory equation [Gb]: ", A
-  WRITE(*,*) "Memory equation [Gb]: ", B
+  if(ControlInversaMC==1) WRITE(*,*) " Eq. (6.1): ", A0
+  WRITE(*,*) " Eq. (6.2): ", A
+  WRITE(*,*) " Eq. (6.3): ", B
 
   !EB
+  A0 = 2*(2*p)**2
   A = (2*p)**2 + 2*(2*p) * (2*L) + (2*p)*(2*L)
   B = 2*(2*(2*p)*(2*L) + 3*(L*L))
 
+  A0 = 8D0*A0/1024D0**3 
   A = 8D0*A/1024D0**3
   B = 8D0*B/1024D0**3
 
   WRITE(*,*)
-  WRITE(*,*) "**************************************************"
-  WRITE(*,*) "ECLIPSE_EB"
-
-  WRITE(*,*) "Memory equation [Gb]: ", A
-  WRITE(*,*) "Memory equation [Gb]: ", B
-
+  WRITE(*,*) "*******************************************************************"
+  WRITE(*,*) "ECLIPSE_EB - [Gb]"
+  WRITE(*,*)
+  
+  if(ControlInversaMC==1) WRITE(*,*) " Eq. (6.4): ", A0
+  WRITE(*,*) " Eq. (6.5): ", A
+  WRITE(*,*) " Eq. (6.6): ", B
 
 
   !T
   L = L + 3
+  A0 = 2*t**2
   A = t*t + 2*t*L + t*L
   B = 4*t*L + 2*L*L
 
+  A0 = 8D0*A0/1024D0**3
   A = 8D0*A/1024D0**3
   B = 8D0*B/1024D0**3
 
   WRITE(*,*)
-  WRITE(*,*) "**************************************************"
-  WRITE(*,*) "ECLIPSE_T"
+  WRITE(*,*) "*******************************************************************"
+  WRITE(*,*) "ECLIPSE_T - [Gb]"
+  WRITE(*,*)
 
-  WRITE(*,'(A,T60,I8)') "   Number of spherical harmonics:             ", TotalArmonicos+3
-
-  WRITE(*,*) "Memory equation [Gb]: ", A
-  WRITE(*,*) "Memory equation [Gb]: ", B
+  if(ControlInversaMC==1) WRITE(*,*) " Eq. (6.7): ", A0
+  WRITE(*,*) " Eq. (6.8): ", A
+  WRITE(*,*) " Eq. (6.9): ", B
 
   WRITE(*,*)
-  WRITE(*,*) "**************************************************"
+  WRITE(*,'(A,T60,I8)') "  Number of spherical harmonics:             ", TotalArmonicos+3
+
+  WRITE(*,*)
+  WRITE(*,*) "*******************************************************************"
 
 
 END PROGRAM QMLTEB
@@ -1027,6 +1040,8 @@ SUBROUTINE CargaProblema(MuestraMemoria, Problema)
   WRITE(TEXTO,*) NumMaskMapPolarization
   WRITE(*,320) "Polarization_Mask_NumMap: ", ADJUSTL(TRIM(Texto))
   WRITE(*,*)
+  WRITE(TEXTO,*) ControlInversaMC
+  WRITE(*,320) "Inverse_Covariance_Matrix_Control: ", Adjustl(Trim(Texto))
 
 
   ! write(TEXTO,*) TipoRuido
