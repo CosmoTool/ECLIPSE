@@ -1,6 +1,6 @@
 # ECLIPSE
 
- Updated May 6, 2022. 
+ Updated May 6, 2022.
 
  ECLIPSE: a fast Quadratic Maximum Likelihood estimator for CMB
           intensity and polarization power spectra
@@ -55,11 +55,11 @@ Job scripts:
 
 Auxiliary code:
 
-  ECLIPSE_Memory.f90 [New - May, 6 - 2022]
+  ECLIPSE_Memory.f90 ... [Updated - May, 6 - 2022]
 
 Manual:
 
-  ECLIPSE User Guide V1.02.pdf   [New - May, 6 - 2022]
+  ECLIPSE User Guide V1.02.pdf ... [Updated - May, 6 - 2022]
 
 
 Example folder:
