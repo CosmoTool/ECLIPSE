@@ -59,7 +59,7 @@ Auxiliary code:
 
 Manual:
 
-  ECLIPSE User Guide V1.02.pdf [New - May, 6 - 2022]
+  ECLIPSE User Guide V1.02.pdf   [New - May, 6 - 2022]
 
 
 Example folder:
