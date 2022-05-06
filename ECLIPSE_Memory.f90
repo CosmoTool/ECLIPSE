@@ -7,6 +7,8 @@
 !          intensity and polarization power spectra
 !
 ! Copyright (C) 2021      Juan Daniel Bilbao Ahedo
+! 
+! Updated May, 6 - 2022
 !
 !
 ! This program is free software: you can redistribute it and/or modify
