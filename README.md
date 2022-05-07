@@ -38,8 +38,8 @@ ECLIPSE Code:
 
 Compilation scripts:
 
-  cipLinux.sh
-
+  cipLinux.sh [Alternative: cipLinux_Alt.sh] ...  [Updated - May, 7 - 2022]
+ 
   cCrayNERSC.sh
 
   cipAltamira.sh
@@ -55,11 +55,11 @@ Job scripts:
 
 Auxiliary code:
 
-  ECLIPSE_Memory.f90 ... [Updated - May, 6 - 2022]
+  ECLIPSE_Memory.f90 ... [Updated - May, 7 - 2022]
 
 Manual:
 
-  ECLIPSE User Guide V1.02.pdf ... [Updated - May, 6 - 2022]
+  ECLIPSE User Guide V1.02.pdf ... [Updated - May, 7 - 2022]
 
 
 Example folder:
