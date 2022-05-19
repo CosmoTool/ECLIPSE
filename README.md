@@ -57,9 +57,9 @@ Auxiliary code:
 
   ECLIPSE_Memory.f90 ... [Updated - May, 7 - 2022]
 
-Manual:
+User Guide:
 
-  ECLIPSE User Guide V1.02.pdf ... [Updated - May, 7 - 2022]
+  ECLIPSE User Guide V1.02.pdf ... [Updated - May, 19 - 2022]
 
 
 Example folder:
