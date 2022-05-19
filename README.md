@@ -1,6 +1,6 @@
 # ECLIPSE
 
- Updated May 7, 2022.
+ Updated May 19, 2022.
 
  ECLIPSE: a fast Quadratic Maximum Likelihood estimator for CMB
           intensity and polarization power spectra
